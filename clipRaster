@@ -1,0 +1,9 @@
+import gdal
+
+'''
+Clipping raster by polygon extent
+'''
+def clipRasterWithPolygon(rasterPath, polyPath, outPath):
+	# os.system("gdalwarp -dstnodata -9999 - q -outline " + polyPath + " -crop_to_outline " + " -of GTiff " + rasterPath + " " + outPath)
+	OutTile = gdal.Warp(outPath, rasterPath, cutlineDSName= polyPath, cropToCutline=True, dstNodata = 0)
+	OutTile = None
