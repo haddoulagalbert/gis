@@ -6,7 +6,7 @@ input_shp: path of the shapefile containing the features
 field_name: field values that will be use rename the output shapefiles
 folder: folder in which the output shapefiles will be saved
 '''
-def features_to_shp(input_shp = '', field_name = '', folder = ''):
+def features_to_shp(input_shp, field_name, folder):
 
 	driver = ogr.GetDriverByName('ESRI Shapefile')
 	input_ds = driver.Open(input_shp)
